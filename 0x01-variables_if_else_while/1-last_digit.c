@@ -4,12 +4,16 @@
 /* more headers goes there */
 
 /* betty style doc for function main goes there */
+/**
+ * main - stores random value in variable n
+ * prints the last digit of the number
+ * Return: 0
+ */
 int main(void)
 {
 int n;
-n = rand() - RAND_MAX / 2;
 srand(time(0));
-  
+n = rand() - RAND_MAX / 2;
 printf("Last digit of %i is %i ", n, (n % 10));
 if ((n % 10) < 6 && (n % 10) > 0)
 {
