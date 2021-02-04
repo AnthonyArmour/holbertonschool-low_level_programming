@@ -4,12 +4,12 @@
 int main(void)
 {
   int y = '\n';
-  int x = 0;
-  while(x < 10)
+  char x;
+  for (x = '0'; x <= '9'; x++)
     {
       putchar(x);
-      x++;
     }
+
   putchar(y);
   return (0);
 }

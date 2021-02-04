@@ -6,12 +6,17 @@ int main(void)
   int x = 'a';
   while(x <= 'z')
     {
-      if(x != 'q' && x != 'e')
-        {
-          putchar(x);
-          x++;
-        }
+      if(x == 'q')
+	{
+	  continue;
+	}
+      if(x == 'e')
+	{
+	  continue;
+	}
+      putchar(x);
+      x++;
     }
-  printf("\n");
+  putchar('\n');
   return (0);
 }
