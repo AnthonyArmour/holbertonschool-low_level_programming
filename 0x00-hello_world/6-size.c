@@ -1,5 +1,7 @@
 #include <stdio.h>
-
+/**
+ * my_function
+ */
 int main(void)
 {
 printf("Size of a char: %zu byte(s)\n", sizeof(char));
