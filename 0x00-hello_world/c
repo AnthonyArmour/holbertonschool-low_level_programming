@@ -836,10 +836,6 @@ extern void funlockfile (FILE *__stream) __attribute__ ((__nothrow__ , __leaf__)
 
 # 2 "main.c" 2
 
-
-
-
-
 int main(void)
 {
   return (0);
