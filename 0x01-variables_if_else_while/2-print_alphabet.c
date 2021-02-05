@@ -15,6 +15,6 @@ int lower_x = tolower(x);
 putchar(lower_x);
 x++;
 }
-printf("\n");
+putchar('\n');
 return (0);
 }

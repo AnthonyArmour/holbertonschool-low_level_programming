@@ -8,7 +8,7 @@
 int main(void)
 {
 int y = '\n';
-char x;
+int x;
 for (x = '0'; x <= '9'; x++)
 {
 putchar(x);
