@@ -8,11 +8,10 @@
  */
 int main(void)
 {
-int x = 'A';
-while (x <= 'Z')
+int x = 'a';
+while (x <= 'z')
 {
-int lower_x = tolower(x);
-putchar(lower_x);
+putchar(x);
 x++;
 }
 putchar('\n');
