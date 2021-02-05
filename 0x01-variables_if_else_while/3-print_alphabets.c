@@ -9,12 +9,11 @@
 int main(void)
 {
 int y = 'A';
-int x = 'A';
+int x = 'a';
 int enter = '\n';
-while (x <= 'Z')
+while (x <= 'z')
 {
-int lower_x = tolower(x);
-putchar(lower_x);
+putchar(x);
 x++;
 }
 while (y <= 'Z')
