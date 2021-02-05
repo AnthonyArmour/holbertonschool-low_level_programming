@@ -12,8 +12,11 @@ int comma = ',';
 while (x <= '9')
 {
 putchar(x);
+if (x < '9')
+{
 putchar(comma);
 putchar(space);
+}
 x++;
 }
 putchar('\n');
