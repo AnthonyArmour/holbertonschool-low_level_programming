@@ -7,7 +7,7 @@ int main(void)
 {
 char *x = "Holberton\n";
 int y = 0;
-while (y <= 8)
+while (y <= 9)
 {
 _putchar(x[y]);
 y++;
