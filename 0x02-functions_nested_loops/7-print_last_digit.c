@@ -10,13 +10,13 @@ int y;
 if (x >= 0)
 {
 y = x % 10;
-_putchar(y);
+_putchar('0' + y);
 return (y);
 }
 else
 {
 y = -x % 10;
-_putchar(y);
+_putchar('0' + y);
 return (y);
 }
 }
