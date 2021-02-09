@@ -8,8 +8,7 @@
  */
 int main(void)
 {
-char string[60];
-strcpy(string, "Programming is like building a multilingual puzzle");
-puts(string);
+char x[] = "\"Programming is like building a multilingual puzzle";
+puts(x);
 return (0);
 }
