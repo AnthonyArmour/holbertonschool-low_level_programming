@@ -16,7 +16,6 @@ void times_table(void)
 	{
 	  a = z / 10;
 	  b = z % 10;
-	  
 	  if (z > 9)
 	    {
 	  _putchar('0' + a);

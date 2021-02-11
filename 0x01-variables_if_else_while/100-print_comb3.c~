@@ -1,0 +1,31 @@
+#include <stdio.h>
+/**
+ *
+ *
+ */
+int main(void)
+{
+int x = '0';
+int y = '1';
+int comma = ',';
+int space = ' ';
+for (; x <= '9'; x++)
+{
+  putchar('T')
+for(; x <= '9'; y++)
+{
+if (x < y)
+{
+putchar(x);
+putchar(y);
+if (x != '8' && y != '9')
+{
+putchar(comma);
+putchar(space);
+}
+}
+}
+}
+putchar('\n');
+return (0);
+}
