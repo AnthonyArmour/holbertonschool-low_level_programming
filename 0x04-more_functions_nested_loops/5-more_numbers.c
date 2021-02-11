@@ -8,18 +8,25 @@ void more_numbers(void)
 {
 	int x = '0';
 	int y = '0';
-	int a = '1';
 	int b = '0';
 	for (; x <= '9'; x++)
 	{
-		for (; y <= '9'; y++)
+		for (; y <= '1'; y++)
 		{
-			_putchar(y);
-		}
-		for (; b <= 4; b++)
-		{
-			_putchar(a);
-			_putchar(b);
+		        for (; b <= '9'; b++)
+			{
+				if (y == '1' && b == '5')
+				{
+					break;
+			        }
+				if (y == '1')
+				{
+					_putchar(y);
+}
+				_putchar(b);
+				
+			}
+			b = '0';
 		}
 		_putchar('\n');
 		b = '0';
