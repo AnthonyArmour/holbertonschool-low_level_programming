@@ -29,5 +29,6 @@ int main(void)
 		if (x % 5 != 0 && x % 3 != 0)
 			printf("%i ", x);
 	}
+	printf("\n");
 	return (0);
 }
