@@ -8,7 +8,7 @@ int main(void)
 {
 	int x = 1;
 
-	for (; x <= 99; x++)
+	for (; x <= 100; x++)
 	{
 		if (x % 3 == 0 && x % 5 != 0)
 		{
@@ -16,7 +16,11 @@ int main(void)
 		}
 		if (x % 5 == 0 && x % 3 != 0)
 		{
-			printf("Buzz ");
+			printf("Buzz");
+			if (x != 100)
+			{
+				printf(" ");
+			}
 		}
 		if (x % 5 == 0 && x % 3 == 0)
 		{
@@ -25,6 +29,5 @@ int main(void)
 		if (x % 5 != 0 && x % 3 != 0)
 			printf("%i ", x);
 	}
-	printf("Buzz");
 	return (0);
 }
