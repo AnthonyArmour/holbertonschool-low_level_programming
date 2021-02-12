@@ -18,13 +18,13 @@ void print_number(int n)
 		_putchar('-');
 		n = n * -1;
 	}
-	while (n != 0)
+	while (n >= 1)
 	{
 		x = x * 10;
 		x = x + (n % 10);
 		n = n / 10;
 	}
-	while (x != 0)
+	while (x >= 1)
 	{
 		y = y * 10;
 		y = y + (x % 10);
