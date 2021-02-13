@@ -6,13 +6,13 @@
  */
 void print_number(int n)
 {
-        unsigned int x;
-        unsigned int nn = n;
+	unsigned int x;
+	unsigned int nn = n;
 	unsigned int y = 1000000000;
 
-        if (n < 0)
-        {
-                _putchar('-');
+	if (n < 0)
+	{
+		_putchar('-');
 		nn = -n;
 	}
 	if (nn < 1)
