@@ -1,38 +1,41 @@
 #include "holberton.h"
 /**
- * print_number - prints int
+ * print_number - prints nums
  * @n: input
  * Return: none
  */
 void print_number(int n)
 {
-	int tmp = 0;
-	int x;
-	int y;
-	unsigned int nn = n;
+        unsigned int x;
+        unsigned int nn = n;
+	unsigned int y = 1000000000;
 
-
-	if (n < 0)
+        if (n < 0)
+        {
+                _putchar('-');
+		nn = -n;
+	}
+	if (nn < 1)
 	{
-		_putchar('-');
-		nn = -nn;
+		_putchar('0' + nn);
 	}
 	while (nn >= 1)
 	{
-		x = x * 10;
-		x = x + (nn % 10);
-		nn = nn / 10;
-	}
-	while (x >= 1)
-	{
-		y = y * 10;
-		y = y + (x % 10);
-		_putchar('0' + (x % 10));
-		tmp = (x % 10);
-		x = x / 10;
-	}
-	if (x == 0 && tmp == 0)
-	{
-		_putchar('0' + (x % 10));
+		if (nn >= y)
+		{
+			x = nn / y;
+			_putchar('0' + x);
+			nn = nn - (x * y);
+			y = y / 10;
+			while (nn < y)
+			{
+				_putchar('0' + 0);
+				y = y / 10;
+			}
+		}
+		else
+		{
+			y = y / 10;
+		}
 	}
 }
