@@ -17,7 +17,7 @@ void print_number(int n)
 	}
 	if (nn < 1)
 	{
-		_putchar('0' + nn);
+		_putchar('0' + nn * 1);
 	}
 	while (nn >= 1)
 	{
