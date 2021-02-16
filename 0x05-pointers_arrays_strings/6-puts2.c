@@ -10,8 +10,11 @@ void puts2(char *str)
 
 	while (*(str + x))
 	{
+		if (x % 2 == 0)
+		{
 		_putchar(*(str + x));
-		x = x + 2;
-	}
+		}
+		x++;
+	       	}
 	_putchar('\n');
 }
