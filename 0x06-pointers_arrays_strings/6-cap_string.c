@@ -28,6 +28,10 @@ char *cap_string(char *x)
 				x[y] = (x[y] - 32);
 			}
 		}
+		if (x[y - 1] == '\t')
+		{
+			x[y - 1] = ' ';
+		}
 	}
 	return (x);
 }
