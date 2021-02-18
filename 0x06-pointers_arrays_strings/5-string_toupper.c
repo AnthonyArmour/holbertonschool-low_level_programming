@@ -1,7 +1,7 @@
 #include "holberton.h"
 /**
  * string_toupper - uppercase conv
- * @char: pointer
+ * @x: pointer
  * Return: str
  *
  */
