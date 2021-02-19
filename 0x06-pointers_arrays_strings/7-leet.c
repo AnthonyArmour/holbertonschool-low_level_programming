@@ -2,7 +2,7 @@
 #include <stdio.h>
 /**
  * leet - encodes str into num
- * @char: pointer
+ * @x: pointer
  * Return: str
  *
  */
