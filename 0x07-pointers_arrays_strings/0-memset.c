@@ -1,10 +1,10 @@
 #include "holberton.h"
 /**
- * _memset - fills mem w/ constant byte
+ * _memset - fills mem constant byte
  * @s:  input poiter
  * @b: input char
  * @n: input
- * REturn: string
+ * Return: string
  */
 char *_memset(char *s, char b, unsigned int n)
 {
