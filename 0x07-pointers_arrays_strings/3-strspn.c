@@ -9,14 +9,20 @@ unsigned int _strspn(char *s, char *accept)
 {
 	unsigned int x = 0;
 	int y = 0;
-
+	int yy = 0;
 	for (; accept[y] != '\0'; y++)
 	{
 		continue;
 	}
 	for (; s[x] != ','; x++)
 	{
-		continue;
+		for (y = 0; accept[yy] != '\0'; yy++)
+		{
+			if (accept[yy] == s[x])
+			{
+				break;
+			}
+		}
 	}
 	return (x);
 }
