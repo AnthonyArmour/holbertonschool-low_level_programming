@@ -16,12 +16,16 @@ unsigned int _strspn(char *s, char *accept)
 	}
 	for (; (s[x] >= 'a' && s[x] <= 'z') || (s[x] >= 'A' && s[x] <= 'Z') ; x++)
 	{
-		for (y = 0; accept[yy] != '\0'; yy++)
+		for (yy = 0; accept[yy] != '\0'; yy++)
 		{
 			if (accept[yy] == s[x])
 			{
-				continue;
+				break;
 			}
+		}
+		if (accept[yy] == '\0')
+		{
+			return (x);
 		}
 	}
 	return (x);
