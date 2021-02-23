@@ -18,6 +18,5 @@ char *_strchr(char *s, char c)
 			return (p);
 		}
 	}
-	p = &s[x];
-	return (p);
+	return (0);
 }
