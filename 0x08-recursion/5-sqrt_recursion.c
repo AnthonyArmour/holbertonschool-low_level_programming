@@ -13,7 +13,7 @@ float num(float x, float y)
 	{
 		return (x);
 	}
-	if (x <= 0)
+	if (x < 0)
 	{
 		return (-1);
 	}
