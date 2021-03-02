@@ -13,7 +13,7 @@ int **alloc_grid(int width, int height)
 	int y = 0;
 	int **d2_array = (int **)malloc(width * sizeof(int *));
 
-	if (width < 1 || height < 1)
+	if (width <= 0 || height <= 0)
 		return (NULL);
 	for (; x < width; x++)
 	{
