@@ -15,12 +15,12 @@ int **alloc_grid(int width, int height)
 
 	if (width <= 0 || height <= 0)
 		return (NULL);
-	d2_array = (int **)malloc(height * sizeof(int *));
+	d2_array = malloc(height * sizeof(int *));
 	if (d2_array == NULL)
 		return (NULL);
 	for (; x < height; x++)
 	{
-		d2_array[x] = (int *)malloc(width * sizeof(int));
+		d2_array[x] = malloc(width * sizeof(int));
 		if (d2_array[x] == NULL)
 		{
 			return (NULL);
