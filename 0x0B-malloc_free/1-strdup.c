@@ -1,6 +1,23 @@
 #include <stdlib.h>
 #include "holberton.h"
 /**
+ * _strlen - strlen
+ * @s: input
+ * Return: str
+ *
+ *
+ */)
+int _strlen(char *s)
+{
+	int i = 0;
+
+	while (*(s + i) != '\0')
+	{
+		i++;
+	}
+	return (i);
+}
+/**
  * _strdup - pointer to newly alloced mem
  * @str: string input
  * Return: string
