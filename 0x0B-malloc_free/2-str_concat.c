@@ -20,14 +20,24 @@ char *str_concat(char *s1, char *s2)
 	{
 		return (NULL);
 	}
-	for (; x < len; x++)
+	if (s1 != NULL)
 	{
-		ptr[x] = s1[x];
+		for (; x < len; x++)
+		{
+			ptr[x] = s1[x];
+		}
 	}
-	for (; y <= len2; y++)
+	if (s2 != NULL)
 	{
-		ptr[x] = s2[y];
-		x++;
+		for (; y <= len2; y++)
+		{
+			ptr[x] = s2[y];
+			x++;
+		}
+	}
+	else
+	{
+		ptr[x] = '\0';
 	}
 	return (ptr);
 }
