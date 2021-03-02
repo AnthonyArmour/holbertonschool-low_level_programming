@@ -26,9 +26,9 @@ int **alloc_grid(int width, int height)
 			return (NULL);
 		}
 	}
-	for (x = 0; x < height; x++)
+	for (x = 0; x < width; x++)
 	{
-		for (; y < width; y++)
+		for (; y < height; y++)
 		{
 			d2_array[x][y] = 0;
 		}
