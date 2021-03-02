@@ -42,7 +42,7 @@ char *str_concat(char *s1, char *s2)
 			x++;
 		}
 	}
-	else
+	if (s2 == NULL)
 	{
 		ptr[x] = '\0';
 	}
