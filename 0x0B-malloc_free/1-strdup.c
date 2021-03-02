@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include "holberton.h"
+#include <stdio.h>
 /**
  * _strdup - pointer to newly alloced mem
  * @str: string input
@@ -17,7 +18,7 @@ char *_strdup(char *str)
 	{
 		return (NULL);
 	}
-	ptr = (char *)malloc(len * (sizeof(char) + 1));
+	ptr = malloc((len + 1) * sizeof(char));
 
 	if (ptr == NULL)
 	{
