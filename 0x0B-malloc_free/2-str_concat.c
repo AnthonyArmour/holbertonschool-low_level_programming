@@ -17,9 +17,9 @@ char *str_concat(char *s1, char *s2)
 	char *ptr;
 
 	if (s1 == NULL)
-		len = 1;
+		s1 = "";
 	if (s2 == NULL)
-		len2 = 1;
+		s2 = "";
 	ptr_size = (len - 1) + (len2 - 1);
 	ptr = (char *)malloc((ptr_size + 1) * sizeof(char));
 
