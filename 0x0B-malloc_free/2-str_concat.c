@@ -27,25 +27,16 @@ char *str_concat(char *s1, char *s2)
 	{
 		return (NULL);
 	}
-	if (s1 != NULL)
+	for (; x < len; x++)
 	{
-		for (; x < len; x++)
-		{
-			ptr[x] = s1[x];
-		}
+		ptr[x] = s1[x];
 	}
-	if (s2 != NULL)
+	for (; y <= len2; y++)
 	{
-		for (; y <= len2; y++)
-		{
-			ptr[x] = s2[y];
-			x++;
-		}
+		ptr[x] = s2[y];
+		x++;
 	}
-	if (s2 == NULL)
-	{
-		ptr[x] = '\0';
-	}
+	ptr[x] = '\0';
 	return (ptr);
 }
 /**
