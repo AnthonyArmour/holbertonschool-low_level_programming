@@ -10,7 +10,6 @@
 char *str_concat(char *s1, char *s2)
 {
 	int len = _strlen(s1);
-	int len2 = _strlen(s2);
 	int x = 0;
 	int y = 0;
 	char *ptr;
@@ -29,7 +28,7 @@ char *str_concat(char *s1, char *s2)
 	{
 		ptr[x] = s1[x];
 	}
-	for (; y <= len2; y++)
+	for (; s2[y]; y++)
 	{
 		ptr[x] = s2[y];
 		x++;
