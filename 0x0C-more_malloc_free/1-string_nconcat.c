@@ -18,9 +18,9 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	if (ptr == NULL)
 		return (NULL);
 	if (s2 == NULL)
-		s2[0] = '\0';
+		s2 = "";
 	if (s1 == NULL)
-		s1[0] = '\0';
+		s1 = "";
 	for (x = 0; s1[x] != '\0'; x++)
 	{
 		ptr[y] = s1[x];
