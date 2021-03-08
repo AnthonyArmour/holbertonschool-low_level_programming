@@ -1,5 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
+/**
+ * main - prints name of file
+ * Return: void
+ *
+ */
 int main(void)
 {
 	char *name = __FILE__;
