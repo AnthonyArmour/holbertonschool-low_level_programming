@@ -39,10 +39,11 @@ unsigned int num_of_vars(const char * const str)
 void print_all(const char * const format, ...)
 {
 	int x = 0;
-	unsigned int num = num_of_vars(format), arg_n = 0;
 	va_list list;
-	char *temp_str, *nil = "(nil)";
+	char *temp_str;
 
+	if (format == NULL)
+		exit(2);
 	va_start(list, format);
 	while (format[x] != '\0')
 	{
@@ -50,29 +51,31 @@ void print_all(const char * const format, ...)
 		{
 		case 's':
 			temp_str = va_arg(list, char *);
-			if (temp_str == NULL)
-				temp_str = nil;
-			printf("%s", temp_str);
-			arg_n++;
+			switch (*(temp_str))
+			{
+			case '\0':
+				printf("%p", va_arg(list, char *));
+				break;
+			default:
+				printf("%s", temp_str);
+				break;
+			}
 			break;
 		case 'i':
 			printf("%d", va_arg(list, int));
-			arg_n++;
 			break;
 		case 'c':
 			printf("%c", (char)va_arg(list, int));
-			arg_n++;
 			break;
 		case 'f':
 			printf("%f", (float)va_arg(list, double));
-			arg_n++;
 			break;
 		}
-		if (arg_n < num && (format[x] == 'f' || format[x] == 's'
-			    || format[x] == 'c' || format[x] == 'i'))
+		if (format[x + 1] != '\0' && (format[x] == 'f' || format[x] ==
+					      's' || format[x] == 'c' || format[
+						      x] == 'i'))
 			printf(", ");
 		x++;
 	}
-	va_end(list);
 	printf("\n");
 }
