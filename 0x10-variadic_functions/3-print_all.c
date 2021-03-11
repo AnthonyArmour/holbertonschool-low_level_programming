@@ -41,9 +41,10 @@ void print_all(const char * const format, ...)
 	int x = 0;
 	unsigned int num = num_of_vars(format), arg_n = 0;
 	va_list list;
-	char *temp_str;
-	char *nil = "(nil)";
+	char *temp_str, *nil = "(nil)";
 
+	if (format)
+	{
 	va_start(list, format);
 	while (format[x] != '\0')
 	{
@@ -68,14 +69,13 @@ void print_all(const char * const format, ...)
 			printf("%f", (float)va_arg(list, double));
 			arg_n++;
 			break;
-
 		}
 		if (arg_n < num && (format[x] == 'f' || format[x] == 's'
 			    || format[x] == 'c' || format[x] == 'i'))
 			printf(", ");
 		x++;
 	}
+	}
 	va_end(list);
 	printf("\n");
-
 }
