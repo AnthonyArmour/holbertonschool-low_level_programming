@@ -43,8 +43,6 @@ void print_all(const char * const format, ...)
 	va_list list;
 	char *temp_str, *nil = "(nil)";
 
-	if (format)
-	{
 	va_start(list, format);
 	while (format[x] != '\0')
 	{
@@ -74,7 +72,6 @@ void print_all(const char * const format, ...)
 			    || format[x] == 'c' || format[x] == 'i'))
 			printf(", ");
 		x++;
-	}
 	}
 	va_end(list);
 	printf("\n");
