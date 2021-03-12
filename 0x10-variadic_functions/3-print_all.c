@@ -30,19 +30,18 @@ unsigned int num_of_vars(const char * const str)
 	return (num);
 }
 /**
- * print_all - moc printf
+ * _call - helper
  * @format: str
+ * @num: un int
+ * @arg_n: un int
+ * @list: list
+ * @temp_str: str
+ * @x: int
  * Return: void
- *
- *
  */
-void print_all(const char * const format, ...)
+void _call(const char * const format, unsigned int num, unsigned int arg_n,
+	   va_list list, char *temp_str, int x)
 {
-	int x = 0;
-	va_list list;
-	char *temp_str;
-
-	va_start(list, format);
 	while (format[x] != '\0' && format != NULL)
 	{
 		switch (format[x])
@@ -52,28 +51,50 @@ void print_all(const char * const format, ...)
 			switch (*(temp_str))
 			{
 			case '\0':
-				printf("%p", va_arg(list, char *));
+				printf("%s%p", COMMA_MAC(arg_n),
+				       va_arg(list, char *));
+				arg_n++;
 				break;
 			default:
-				printf("%s", temp_str);
+				printf("%s%s", COMMA_MAC(arg_n), temp_str);
+				arg_n++;
 				break;
 			}
 			break;
 		case 'i':
-			printf("%d", va_arg(list, int));
+			printf("%s%d", COMMA_MAC(arg_n), va_arg(list, int));
+			arg_n++;
 			break;
 		case 'c':
-			printf("%c", (char)va_arg(list, int));
+			printf("%s%c", COMMA_MAC(arg_n),
+			       (char)va_arg(list, int));
+			arg_n++;
 			break;
 		case 'f':
-			printf("%f", (float)va_arg(list, double));
+			printf("%s%f", COMMA_MAC(arg_n),
+			       (float)va_arg(list, double));
+			arg_n++;
 			break;
 		}
-		if (format[x + 1] != '\0' && (format[x] == 'f' || format[x] ==
-					      's' || format[x] == 'c' || format[
-						      x] == 'i'))
-			printf(", ");
 		x++;
 	}
+	(void)num;
+}
+/**
+ * print_all - moc printf
+ * @format: str
+ * Return: void
+ *
+ *
+ */
+void print_all(const char * const format, ...)
+{
+	unsigned int num = num_of_vars(format), arg_n = 0;
+	int x = 0;
+	va_list list;
+	char *temp_str = NULL;
+
+	va_start(list, format);
+	_call(format, num, arg_n, list, temp_str, x);
 	printf("\n");
 }
