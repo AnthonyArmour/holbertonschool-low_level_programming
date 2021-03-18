@@ -6,26 +6,24 @@
  */
 size_t print_list(const list_t *h)
 {
-	list_t *traverse;
 	size_t n = 0;
 
-	traverse = (list_t *)h;
-	while (traverse->next != NULL)
+	while (h->next != NULL)
 	{
 		n++;
-		if (traverse->str == NULL)
+		if (h->str == NULL)
 		{
 			printf("[0] (nil)\n");
 		}
 		else
-			printf("[%u] %s\n", traverse->len, traverse->str);
-		traverse = traverse->next;
+			printf("[%u] %s\n", h->len, h->str);
+		h = h->next;
 	}
-	if (traverse->str == NULL)
+	if (h->str == NULL)
 	{
 		printf("[0] (nil)\n"), n++;
 	}
 	else
-		printf("[%u] %s\n", traverse->len, traverse->str), n++;
+		printf("[%u] %s\n", h->len, h->str), n++;
 	return (n);
 }
