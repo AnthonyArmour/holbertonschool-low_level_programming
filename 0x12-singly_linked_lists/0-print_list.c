@@ -9,8 +9,6 @@ size_t print_list(const list_t *h)
 	list_t *traverse;
 	size_t n = 0;
 
-	if (h == NULL)
-		return (NULL);
 	traverse = (list_t *)h;
 	while (traverse->next != NULL)
 	{
