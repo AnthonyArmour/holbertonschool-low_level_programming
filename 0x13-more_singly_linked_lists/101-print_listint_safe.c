@@ -6,7 +6,7 @@
  */
 size_t print_listint_safe(const listint_t *head)
 {
-	const listint_t *trav;
+	const listint_t *trav = NULL;
 	size_t count = 0;
 	int x = 0;
 	const listint_t *address[20];
@@ -14,6 +14,8 @@ size_t print_listint_safe(const listint_t *head)
 	if (!head)
 		return (0);
 	trav = head;
+	if (!trav)
+		exit(98);
 	while (trav)
 	{
 		count++;
