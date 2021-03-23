@@ -12,7 +12,7 @@ size_t print_listint_safe(const listint_t *head)
 	const listint_t *address[20];
 
 	if (!head)
-		exit(98);
+		return (0);
 	trav = head;
 	while (trav)
 	{
@@ -25,7 +25,7 @@ size_t print_listint_safe(const listint_t *head)
 		else
 		{
 			printf("-> [%p] %d\n", (void *)trav->next, trav->next->n);
-			exit(98);
+			break;
 		}
 	}
 	return (count);
