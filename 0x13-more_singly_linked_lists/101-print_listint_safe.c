@@ -9,7 +9,7 @@ size_t print_listint_safe(const listint_t *head)
 	const listint_t *trav = NULL;
 	size_t count = 0;
 	int x = 0;
-	const listint_t *address[20];
+	const listint_t *address[1000];
 
 	if (!head)
 		return (0);
