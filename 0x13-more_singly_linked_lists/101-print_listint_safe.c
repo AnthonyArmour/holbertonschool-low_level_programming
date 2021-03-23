@@ -22,8 +22,12 @@ size_t print_listint_safe(const listint_t *head)
 		if (end_list(trav->next, address) == 0)
 			trav = trav->next;
 		else
+		{
+			printf("-> [%p] %d\n", (void *)trav->next, trav->next->n);
 			break;
+		}
 	}
+	/*find_loop(head);*/
 	return (count);
 }
 /**
