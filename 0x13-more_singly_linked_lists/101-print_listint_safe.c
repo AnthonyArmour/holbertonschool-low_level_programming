@@ -7,7 +7,8 @@
 size_t print_listint_safe(const listint_t *head)
 {
 	const listint_t *trav;
-	int count = 0, x = 0;
+	size_t count = 0;
+	int x = 0;
 	const listint_t *address[20];
 
 	if (!head)
@@ -27,7 +28,6 @@ size_t print_listint_safe(const listint_t *head)
 			break;
 		}
 	}
-	/*find_loop(head);*/
 	return (count);
 }
 /**
