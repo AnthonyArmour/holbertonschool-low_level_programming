@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <string.h>
 /**
- * listint_s - linked list
+ * struct listint_s - linked list
  * @n: int
  * @next: ptr next
  * linked list struct
