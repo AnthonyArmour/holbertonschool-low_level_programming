@@ -18,14 +18,14 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		y++;
 		trav = trav->next;
 	}
-	if (idx > y + 1)
+	if (idx > y)
 		return (NULL);
 	temp = malloc(sizeof(listint_t));
 	if (!temp)
 		return (NULL);
 	temp->n = n;
 	temp->next = NULL;
-	if (!*head && idx == 0)
+	if (!*head)
 	{
 		*head = temp;
 		return (temp);
