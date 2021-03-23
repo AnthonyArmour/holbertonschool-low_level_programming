@@ -30,6 +30,12 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		*head = temp;
 		return (temp);
 	}
+	if (idx == 0)
+	{
+		temp->next = *head;
+		*head = temp;
+		return (temp);
+	}
 	trav = *head;
 	for (x = 0; x < (idx - 1); x++)
 		trav = trav->next;
