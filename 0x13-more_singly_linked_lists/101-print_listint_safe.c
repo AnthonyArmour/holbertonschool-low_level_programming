@@ -25,7 +25,7 @@ size_t print_listint_safe(const listint_t *head)
 		else
 		{
 			printf("-> [%p] %d\n", (void *)trav->next, trav->next->n);
-			break;
+			exit(98);
 		}
 	}
 	return (count);
