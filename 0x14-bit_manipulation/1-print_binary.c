@@ -19,9 +19,11 @@ void print_binary(unsigned long int n)
 			signal = 1;
 		}
 		else
+		{
 			if (signal == 1)
 			{
 				_putchar('0');
 			}
+		}
 	}
 }
