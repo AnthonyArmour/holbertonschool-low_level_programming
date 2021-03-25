@@ -11,13 +11,17 @@ int set_bit(unsigned long int *n, unsigned int index)
 
 	if ((*n >> index) & 1)
 		return (1);
+	if (index == 0)
+	{
+		*n += 1;
+		return (1);
+	}
 	if (num >= 0)
 	{
 		*n += (unsigned long)num;
 	return (1);
 	}
-return (-1);
-
+	return (-1);
 }
 /**
  * _pow_recursion - x to the power y
