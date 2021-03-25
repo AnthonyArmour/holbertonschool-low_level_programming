@@ -8,7 +8,8 @@
 int set_bit(unsigned long int *n, unsigned int index)
 {
 	unsigned int num;
-
+	if (index > 63)
+		return (-1);
 	if (!n)
 		return (-1);
 	num = _pow_recursion(2, index);
