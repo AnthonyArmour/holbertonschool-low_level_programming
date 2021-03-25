@@ -16,7 +16,7 @@ int clear_bit(unsigned long int *n, unsigned int index)
 		return (-1);
 	num = _pow_recursion(2, index);
 	if (num > (unsigned long)*n)
-		return (-1);
+		return (1);
 	if (!((*n >> index) & 1) || *n == 0)
 		return (1);
 	*n -= (unsigned long)num;
