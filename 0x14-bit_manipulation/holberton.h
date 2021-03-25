@@ -8,6 +8,6 @@ int clear_bit(unsigned long int *n, unsigned int index);
 unsigned int flip_bits(unsigned long int n, unsigned long int m);
 int get_endianness(void);
 int _putchar(char c);
-int _pow_recursion(int x, int y);
+unsigned int _pow_recursion(unsigned int x, unsigned int y);
 
 #endif

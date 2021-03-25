@@ -7,19 +7,15 @@
  */
 int set_bit(unsigned long int *n, unsigned int index)
 {
-	int num;
+	unsigned int num;
 
 	if (!n)
 		return (-1);
-	num = _pow_recursion(2, (int)index);
+	num = _pow_recursion(2, index);
 	if ((*n >> index) & 1)
 		return (1);
-	if (num >= 0)
-	{
-		*n += (unsigned long)num;
+	*n += (unsigned long)num;
 	return (1);
-	}
-	return (-1);
 }
 /**
  * _pow_recursion - x to the power y
@@ -27,10 +23,8 @@ int set_bit(unsigned long int *n, unsigned int index)
  * @y: exponent
  * Return: int
  */
-int _pow_recursion(int x, int y)
+unsigned int _pow_recursion(unsigned int x, unsigned int y)
 {
-	if (y < 0)
-		return (-1);
 	if (y == 0)
 		return (1);
 	if (y == 1)
