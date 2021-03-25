@@ -7,15 +7,13 @@
  */
 int set_bit(unsigned long int *n, unsigned int index)
 {
-	int num = _pow_recursion(2, (int)index);
+	int num;
 
+	if (!n)
+		return (-1);
+	num = _pow_recursion(2, (int)index);
 	if ((*n >> index) & 1)
 		return (1);
-	if (index == 0)
-	{
-		*n += 1;
-		return (1);
-	}
 	if (num >= 0)
 	{
 		*n += (unsigned long)num;
