@@ -15,6 +15,8 @@ int clear_bit(unsigned long int *n, unsigned int index)
 	if (!n)
 		return (-1);
 	num = _pow_recursion(2, index);
+	if (num > (unsigned long)*n)
+		return (-1);
 	printf("this is num: %u\n", num);
 	if (((*n >> index) & 0) || *n == 0)
 		return (1);
