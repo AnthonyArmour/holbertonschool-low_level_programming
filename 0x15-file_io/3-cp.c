@@ -17,13 +17,13 @@ int main(int argc, char *argv[])
 		exit(97);
 	}
 	fp1 = open(argv[1], O_RDONLY);
-	if (!fp1  || fp1 == -1)
+	if (fp1 == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		close(fp1), exit(98);
 	}
 	fp = open(argv[2], O_CREAT | O_TRUNC | O_WRONLY, 0664);
-	if (!fp  || fp == -1)
+	if (fp == -1)
 	{
 		dprintf(STDERR_FILENO,
 			"Error: Can't read from file %s\n", argv[2]);
@@ -33,7 +33,6 @@ int main(int argc, char *argv[])
 	if (!buf)
 		return (0);
 	rcheck = read(fp1, buf, 1024);
-
 	Rcheck(rcheck, fp, fp1, buf, argv[2]);
 	ccheck = close(fp), ccheck1 = close(fp1);
 	if (ccheck == -1)
@@ -67,7 +66,7 @@ ssize_t Rcheck(ssize_t rcheck, int fp, int fp1, char *buf, char *str)
 		if (wcheck == -1)
 		{
 			dprintf(STDERR_FILENO,
-				"Error: Can't read from file %s\n", str);
+				"Error: Can't write to %s\n", str);
 			close(fp), close(fp1), exit(99);
 		}
 		free(buf), buf = malloc(1024);
