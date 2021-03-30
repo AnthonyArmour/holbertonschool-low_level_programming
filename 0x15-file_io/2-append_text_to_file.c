@@ -14,7 +14,7 @@ int append_text_to_file(const char *filename, char *text_content)
 	if (!filename)
 		return (-1);
 	fp = open(filename, O_WRONLY | O_APPEND);
-	if (fp == -1 || errno == EACCES)
+	if (fp == -1 || fp == EACCES)
 		return (-1);
 	if (!text_content)
 	{
