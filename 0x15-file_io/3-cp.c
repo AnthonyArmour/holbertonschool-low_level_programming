@@ -30,6 +30,11 @@ int main(int argc, char *argv[])
 		close(fp1), exit(99);
 	}
 	Rcheck(rcheck, fp, fp1, buf, argv[2]);
+	if (rcheck == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+		exit(98);
+	}
 	ccheck = close(fp), ccheck1 = close(fp1);
 	if (ccheck == -1)
 	{
