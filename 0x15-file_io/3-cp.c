@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
 			"Error: Can't write to %s\n", argv[2]);
 		close(fp1), exit(99);
 	}
-	Rcheck(rcheck, fp, fp1, buf, argv[2]);
+	rcheck = Rcheck(rcheck, fp, fp1, buf, argv[2]);
 	if (rcheck == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
