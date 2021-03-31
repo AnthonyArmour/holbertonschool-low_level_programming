@@ -9,7 +9,7 @@ int main(int argc, char *argv[])
 {
 	int fp, fp1;
 	ssize_t ccheck, ccheck1, rcheck = 1;
-	char *buf;
+	char buf[1024];
 
 	if (argc != 3)
 	{
@@ -29,10 +29,6 @@ int main(int argc, char *argv[])
 			"Error: Can't write to %s\n", argv[2]);
 		close(fp1), exit(99);
 	}
-	buf = malloc(1024);
-	if (!buf)
-		return (0);
-	rcheck = read(fp1, buf, 1024);
 	Rcheck(rcheck, fp, fp1, buf, argv[2]);
 	ccheck = close(fp), ccheck1 = close(fp1);
 	if (ccheck == -1)
@@ -60,28 +56,16 @@ ssize_t Rcheck(ssize_t rcheck, int fp, int fp1, char *buf, char *str)
 {
 	ssize_t wcheck;
 
-	while (rcheck == 1024)
+	while ((rcheck = read(fp1, buf, 1024)) > 0)
 	{
-		wcheck = write(fp, buf, _strlen(buf));
+		wcheck = write(fp, buf, rcheck);
 		if (wcheck == -1)
 		{
 			dprintf(STDERR_FILENO,
 				"Error: Can't write to %s\n", str);
 			close(fp), close(fp1), exit(99);
 		}
-		free(buf), buf = malloc(1024);
-		if (!buf)
-			exit(0);
-		rcheck = read(fp1, buf, 1024);
 	}
-	wcheck = write(fp, buf, _strlen(buf));
-	if (wcheck == -1)
-	{
-		dprintf(STDERR_FILENO,
-			"Error: Can't write to %s\n", str);
-		close(fp), close(fp1), exit(99);
-	}
-	free(buf);
 	return (rcheck);
 }
 /**
