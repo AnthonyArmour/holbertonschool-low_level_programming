@@ -1,5 +1,11 @@
 #!/usr/bin/python3
+"""Defines an island perimeter measuring function"""
 def island_perimeter(matrix=[]):
+
+    """Returns the perimeter of 1's island in a matrix
+    Grid: list of integers
+    Returns: perimeter"""
+
     lst = list()
     psides = 0
     for x in range(len(matrix)):
