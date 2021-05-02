@@ -1,9 +1,9 @@
-CC := gcc
-SRC := SRC := $(wildcard *.c)
-OBJ := $(SRC:.c=.o)
-NAME := holberton
-RM := rm -f
-CFLAGS := -Wall -Werror -Wextra -pedantic
+CC = gcc
+SRC = holberton.c main.c
+OBJ = $(SRC:.c=.o)
+NAME = holberton
+RM = rm -f
+CFLAGS = -Wall -Werror -Wextra -pedantic
 
 all: $(OBJ)
 	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
