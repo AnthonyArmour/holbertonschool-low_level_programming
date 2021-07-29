@@ -8,10 +8,8 @@
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	unsigned long int idx = hash_djb2(key) % ht->size;
+	unsigned long int idx = hash_djb2((const unsigned char *)key) % ht->size;
 	hash_node_t *new = NULL;
-	const char *k = NULL;
-	const char *v = NULL;
 
 	if (strlen(key) == 0)
 		return (0);
