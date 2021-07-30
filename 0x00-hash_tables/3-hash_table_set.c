@@ -8,7 +8,7 @@
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	unsigned long int idx, hash, exists;
+	unsigned long int idx = 0, hash = 0, exists = 0;
 	hash_node_t *new = NULL;
 
 	if (strlen(key) == 0 || ht == NULL)
@@ -22,13 +22,19 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	new->value = strdup(value);
 	if (new->value == NULL)
 		return (0);
+	new->next = NULL;
 	hash = hash_djb2((const unsigned char *)key);
 	idx = hash % ht->size;
 	if (ht->array[idx] != NULL)
 		exists = hash_djb2((const unsigned char *)ht->array[idx]->key);
 	if (exists != hash)
-	{
 		new->next = ht->array[idx];
+	else
+	{
+		new->next = ht->array[idx]->next;
+		free(ht->array[idx]->key);
+		free(ht->array[idx]->value);
+		free(ht->array[idx]);
 	}
 	ht->array[idx] = new;
 	return (1);
