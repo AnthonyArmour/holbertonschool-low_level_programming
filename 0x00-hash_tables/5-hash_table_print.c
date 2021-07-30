@@ -7,12 +7,12 @@
 void hash_table_print(const hash_table_t *ht)
 {
 	hash_node_t *temp;
-	int sig = 0;
+	unsigned long int x = 0, sig = 0;
 
 	if (ht == NULL)
 		return;
 	putchar('{');
-	for (unsigned long int x = 0; x < ht->size; x++)
+	for (x = 0; x < ht->size; x++)
 	{
 		temp = ht->array[x];
 		while (temp != NULL)
