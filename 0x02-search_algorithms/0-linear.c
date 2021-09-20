@@ -10,7 +10,7 @@
 void _print_check(int idx, int value)
 {
 	int x;
-	char *check = "value checked array[] = []\n";
+	char *check = "Value checked array[] = []\n";
 
 	for (x = 0; x < 27; x++)
 	{
@@ -30,17 +30,18 @@ void _print_check(int idx, int value)
 
 void print_int(int n)
 {
-    if (n < 0) {
-        putchar('-');
-        n = -n;
+	if (n < 0)
+	{
+		putchar('-');
+		n = -n;
     }
-    if (n / 10 != 0)
-        print_int(n / 10);
-    putchar((n % 10) + '0');
+	if (n / 10 != 0)
+		print_int(n / 10);
+	putchar((n % 10) + '0');
 }
 
 /**
- * linear_search - 
+ * linear_search - finds target value in array
  * @array: pointer to the first element of the array to search in
  * @size: the number of elements in array
  * @value: the value to search for
