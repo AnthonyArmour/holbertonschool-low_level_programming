@@ -1,7 +1,7 @@
 #include "search_algos.h"
 
 /**
- * print_array - Prints an array of integers
+ * print_int_array - Prints an array of integers
  * @array: The array to be printed
  * @left: Index to begin printing from
  * @right: Index to stop printing
